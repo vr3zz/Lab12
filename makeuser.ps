@@ -1,0 +1,16 @@
+if (( $# != 3 )); then
+	echo "illegal number of parameters"
+	exit
+fi
+
+ # $1 - display name
+ # $2 -login name
+
+echo "DIPLAY NAME:" $1
+echo "LOGIN NAME:" $2
+echo "PASSWORD:" $3
+	groupadd $2
+	useradd -g $2 $2 $3
+	chown $2 /home/$2
+	chgrp $2 /home/$2
+
